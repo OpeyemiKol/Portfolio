@@ -1,5 +1,7 @@
-// components/Projects.tsx
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
@@ -47,30 +49,68 @@ export default function Projects() {
     },
   ];
 
+  // Animation variants
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 40 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section id="projects" className="py-12 px-6 dark:bg-gray-900">
-      <h1 className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20">
+      {/* Section Title */}
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+        className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20"
+      >
         🚀 My Projects
         <span className="absolute left-1/2 -translate-x-1/2 bottom-[-40] w-48 h-4 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
-      </h1>
+      </motion.h1>
 
-      <h2 className="text-3xl text-teal-400 font-bellefair text-center mb-10 dark:text-gray-100">
+      {/* Subtitle */}
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+        className="text-3xl text-teal-400 font-bellefair text-center mb-10 dark:text-gray-100"
+      >
         A selection of projects showcasing my skills and creativity.
-      </h2>
+      </motion.h2>
 
-      <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
+      {/* Projects Grid */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false }}
+        className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto"
+      >
         {projects.map((project) => (
-          <div
+          <motion.div
             key={project.name}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col"
+            variants={item}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl flex flex-col"
           >
-            {/* Image with overlay */}
-            <div className="relative w-full h-45 group">
+            {/* Image */}
+            <div className="relative w-full h-48 group">
               <Image
                 src={project.image}
                 alt={project.name}
                 fill
-                className="object-contain rounded-t-lg"
+                className="object-cover rounded-t-lg"
               />
             </div>
 
@@ -82,18 +122,19 @@ export default function Projects() {
               <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 flex-1">
                 {project.description}
               </p>
-              <a
+              <motion.a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ color: "#0ea5e9" }}
                 className="mt-4 inline-block text-sm font-medium text-blue-600"
               >
                 View Project
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

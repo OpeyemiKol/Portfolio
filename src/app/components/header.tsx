@@ -64,56 +64,39 @@ export default function Header() {
 
       {/* Mobile menu */}
       <nav
-        className={` absolute top-20 right-0 w-1/2 text-[23px] font-bellefair bg-black flex flex-col text-left px-4 py-6 rounded-[10px] md:hidden transform transition-all duration-700 ease-in-out ${
-          open
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0 pointer-events-none"
-        } `}
+        className={`absolute top-20 right-0 w-1/2 text-[24px] font-bellefair
+  border border-white/30
+  bg-linear-to-b from-teal-800 to-teal-900
+  flex flex-col text-left px-4 py-6
+  rounded-xl shadow-2xl
+  md:hidden
+  transform transition-all duration-700 ease-in-out
+  ${
+    open
+      ? "translate-y-0 opacity-100"
+      : "-translate-y-full opacity-0 pointer-events-none"
+  }`}
       >
-        <a
-          href="#home"
-          className="flex items-center gap-2 py-2 hover:text-teal-400 transition"
-          onClick={() => setOpen(false)}
-        >
-          <HiHome className="text-xl shrink-0" />
-          Home
-        </a>
-
-        <a
-          href="#about"
-          className="flex items-center gap-2 py-2 hover:text-teal-400 transition"
-          onClick={() => setOpen(false)}
-        >
-          <HiUser className="text-xl shrink-0" />
-          About
-        </a>
-
-        <a
-          href="#skills"
-          className="flex items-center gap-2 py-2 hover:text-teal-400 transition"
-          onClick={() => setOpen(false)}
-        >
-          <HiCode className="text-xl shrink-0" />
-          Skills
-        </a>
-
-        <a
-          href="#projects"
-          className="flex items-center gap-2 py-2 hover:text-teal-400 transition"
-          onClick={() => setOpen(false)}
-        >
-          <HiFolder className="text-xl shrink-0" />
-          Projects
-        </a>
-
-        <a
-          href="#contact"
-          className="flex items-center gap-2 py-2 hover:text-teal-400 transition"
-          onClick={() => setOpen(false)}
-        >
-          <HiMail className="text-xl shrink-0" />
-          Contact
-        </a>
+        {[
+          { href: "#home", label: "Home", icon: HiHome },
+          { href: "#about", label: "About", icon: HiUser },
+          { href: "#skills", label: "Skills", icon: HiCode },
+          { href: "#projects", label: "Projects", icon: HiFolder },
+          { href: "#contact", label: "Contact", icon: HiMail },
+        ].map(({ href, label, icon: Icon }) => (
+          <a
+            key={href}
+            href={href}
+            onClick={() => setOpen(false)}
+            className="group flex items-center gap-3 py-3 px-2 rounded-lg
+      hover:bg-white/10 transition-all duration-300"
+          >
+            <Icon className="text-xl shrink-0 group-hover:text-teal-300 transition" />
+            <span className="tracking-wide group-hover:text-teal-300 transition">
+              {label}
+            </span>
+          </a>
+        ))}
       </nav>
     </header>
   );

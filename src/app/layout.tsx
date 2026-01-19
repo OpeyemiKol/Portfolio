@@ -32,7 +32,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body className="overflow-x-hidden">{children}</body>
     </html>
   );
 }

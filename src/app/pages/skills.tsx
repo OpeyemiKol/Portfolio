@@ -1,6 +1,8 @@
-// components/Skills.tsx
+"use client";
+
 import Image from "next/image";
 import { HiCode } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   const skills = {
@@ -48,28 +50,43 @@ export default function Skills() {
 
   return (
     <section id="skills" className="min-h-screen py-12 px-6 dark:bg-gray-900">
-      <h1 className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20">
+      {/* Section Title */}
+      <motion.h1
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+        className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20"
+      >
         <HiCode className="inline" /> My Skills
         <span className="absolute left-1/2 -translate-x-1/2 bottom-[-40] w-48 h-4 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
-      </h1>
-      <h2 className="text-4xl font-bellefair text-teal-400 font-bold text-center mb-4 dark:text-gray-100">
+      </motion.h1>
+
+      <motion.h2
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: false }}
+        className="text-4xl font-bellefair text-teal-400 font-bold text-center mb-4 dark:text-gray-100"
+      >
         💻 Frontend Development
-      </h2>
-      <p className="text-center font-bellefair text-2xl max-w-2xl mx-auto mb-10 dark:text-gray-300">
+      </motion.h2>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: false }}
+        className="text-center font-bellefair text-2xl max-w-2xl mx-auto mb-10 dark:text-gray-300"
+      >
         I specialize in building modern, responsive, and user-friendly web
         applications using contemporary frontend technologies.
-      </p>
+      </motion.p>
 
-      {/* Core Technologies */}
+      {/* Categories */}
       <SkillCategory title="Core Technologies" items={skills.core} />
-
-      {/* Frameworks & Libraries */}
       <SkillCategory title="Frameworks & Libraries" items={skills.frameworks} />
-
-      {/* Styling & UI */}
       <SkillCategory title="Styling & UI" items={skills.styling} />
-
-      {/* Modern Tooling */}
       <SkillCategory title="Modern Tooling" items={skills.tooling} />
     </section>
   );
@@ -82,20 +99,48 @@ function SkillCategory({
   title: string;
   items: { name: string; icon: string }[];
 }) {
+  // Variants for staggered animation
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <div className="mb-16">
-      <h3 className="text-3xl font-bellefair font-semibold text-center mb-10 text-teal-400 dark:text-gray-200">
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false }}
+      variants={container}
+      className="mb-16"
+    >
+      <motion.h3
+        variants={item}
+        className="text-3xl font-bellefair font-semibold text-center mb-10 text-teal-400 dark:text-gray-200"
+      >
         {title}
-      </h3>
+      </motion.h3>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 max-w-5xl mx-auto">
         {items.map((skill) => (
-          <div
+          <motion.div
             key={skill.name}
+            variants={item}
             className="group flex flex-col items-center justify-center py-8 rounded-2xl bg-gray-600 border-3 border-gray-800 hover:border-teal-400 transition"
           >
             {/* BIG ICON */}
-            <div className="mb-6 transform transition group-hover:scale-110">
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="mb-6"
+            >
               <Image
                 src={skill.icon}
                 alt={skill.name}
@@ -103,15 +148,18 @@ function SkillCategory({
                 height={100}
                 className="drop-shadow-xl"
               />
-            </div>
+            </motion.div>
 
             {/* NAME */}
-            <p className="text-lg font-semibold tracking-wide text-gray-200">
+            <motion.p
+              variants={item}
+              className="text-lg font-semibold tracking-wide text-gray-200"
+            >
               {skill.name}
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }

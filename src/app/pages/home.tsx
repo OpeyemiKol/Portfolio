@@ -7,12 +7,13 @@ import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div id="home" className="flex flex-col items-center p-4 min-h-screen">
-      <div className="w-8/10 mt-30 md:mt-30 flex flex-col justify-center items-center gap-5 text-center">
+      <div className="w-8/10 mt-30 md:mt-26 flex flex-col justify-center items-center gap-5 text-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="relative border-4 border-teal-400 px-6 py-4 font-barlow 
             rounded-3xl text-white text-[16px] md:text-3xl tracking-widest
             bg-linear-to-r from-gray-900 via-teal-900 to-gray-800 
@@ -29,8 +30,9 @@ export default function Home() {
         {/* Subheading */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-5xl md:text-5xl font-bold text-gray-400"
         >
           <span className="font-bellefair text-teal-400 tracking-widest text-5xl md:text-7xl font-bold">
@@ -45,8 +47,9 @@ export default function Home() {
         {/* Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="text-[24px] md:text-[26px] font-barlow tracking-widest max-w-3xl"
         >
           I’m a <span className="font-bold">frontend engineer</span> focused on
@@ -57,8 +60,9 @@ export default function Home() {
         {/* Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
+          viewport={{ once: false, amount: 0.3 }}
           className="flex flex-col md:flex-row items-center gap-7 mt-5"
         >
           <Link href="#contact">

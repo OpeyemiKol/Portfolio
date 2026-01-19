@@ -14,6 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Viewport meta to fix mobile zoom issues */}
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+
         {/* Google Fonts preconnect + stylesheet */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

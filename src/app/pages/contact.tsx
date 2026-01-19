@@ -43,10 +43,7 @@ export default function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="py-20 px-6 sm:px-8 lg:px-12 dark:bg-gray-900 min-h-screen"
-    >
+    <section id="contact" className="py-20 px-6 sm:px-8 lg:px-12 min-h-screen">
       {/* Title */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}

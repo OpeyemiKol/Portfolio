@@ -64,7 +64,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-12 px-6 dark:bg-gray-900">
+    <section id="projects" className="py-12 px-6 ">
       {/* Section Title */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}

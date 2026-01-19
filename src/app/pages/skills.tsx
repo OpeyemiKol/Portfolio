@@ -49,7 +49,7 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="min-h-screen py-12 px-6 dark:bg-gray-900">
+    <section id="skills" className="min-h-screen py-12 px-6">
       {/* Section Title */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}

@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kolurejo's Portfolio
 
-## Getting Started
+## 🚀 Overview
 
-First, run the development server:
+This is my personal portfolio website built with **Next.js**, **Tailwind CSS**, and enhanced with **Framer Motion** animations. It showcases my skills, projects, and ways to contact me.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
+- **Animated Sections**: Smooth scroll-triggered animations using Framer Motion.
+- **Projects Showcase**: Highlighting selected projects with images, descriptions, and live links.
+- **Skills Section**: Categorized technologies with icons.
+- **Contact Form**: Functional form integrated with an API route to send messages.
+- **Direct Contact Links**: Gmail, LinkedIn, and GitHub.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 16
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Deployment**: Vercel
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+├── components
+│ ├── About.tsx
+│ ├── Contact.tsx
+│ ├── Projects.tsx
+│ ├── Skills.tsx
+│ └── Home.tsx
+├── pages
+│ └── api
+│ └── contact.ts
+├── public
+│ └── images
+├── styles
+│ └── globals.css
+└── layout.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> ⚠️ Use a Gmail App Password instead of your main password for security.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Deployment
 
-## Deploy on Vercel
+The portfolio is deployed on **Vercel**. To deploy:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub.
+2. Connect your repository to Vercel.
+3. Add environment variables in Vercel dashboard.
+4. Deploy and preview your live portfolio.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contact
+
+- **Email**: kolurejohorpy@gmail.com
+- **LinkedIn**: [Opeyemi Kolurejo](https://www.linkedin.com/in/opeyemi-kolurejo-a94117229/)
+- **GitHub**: [OpeyemiKol](https://github.com/OpeyemiKol)
+
+## 📝 License
+
+This project is open source and available under the MIT License.

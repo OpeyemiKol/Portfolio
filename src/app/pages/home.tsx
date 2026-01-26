@@ -17,7 +17,7 @@ export default function Home() {
           className="relative border-4 border-teal-400 px-6 py-4 font-barlow 
             rounded-3xl text-white text-[16px] md:text-3xl tracking-widest
             bg-linear-to-r from-gray-900 via-teal-900 to-gray-800 
-            shadow-xl hover:shadow-2xl transition-shadow duration-500"
+            shadow-xl hover:shadow-2xl animate-bounce transition-shadow duration-500"
         >
           <FaStar className="inline mb-3 md:mb-1 mr-3 text-yellow-400 text-[22px] animate-spin drop-shadow-lg" />
           Welcome to My Portfolio
@@ -69,7 +69,7 @@ export default function Home() {
             <button
               className="flex font-barlow tracking-widest text-[20px] items-center gap-2 bg-linear-to-r from-teal-600 to-teal-800 
                 text-white px-10 py-3 rounded-[20px] shadow-md hover:from-teal-700 hover:to-teal-900 
-                transition-transform transform hover:scale-105 w-full md:w-auto animate-bounce"
+                transition-transform transform hover:scale-105 w-full md:w-auto"
             >
               ✨ Create with me
             </button>
@@ -79,7 +79,7 @@ export default function Home() {
             href="/MyCV.docx"
             download="Opeyemi-Kolurejo-CV.docx"
             className="flex font-barlow tracking-widest text-[20px] items-center gap-2 bg-gray-400 text-gray-900 px-10 py-3 rounded-[20px] 
-              shadow-md hover:bg-gray-300 animate-bounce transition-transform transform hover:scale-105 w-full md:w-auto"
+              shadow-md hover:bg-gray-300 transition-transform transform hover:scale-105 w-full md:w-auto"
           >
             📄 Download CV
           </a>

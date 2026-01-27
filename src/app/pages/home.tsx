@@ -76,7 +76,7 @@ export default function Home() {
           </Link>
 
           <a
-            href="/MyCV.docx"
+            href="/Kolurejo's_CV.docx"
             download="Opeyemi-Kolurejo-CV.docx"
             className="flex font-barlow tracking-widest text-[20px] items-center gap-2 bg-gray-400 text-gray-900 px-10 py-3 rounded-[20px] 
               shadow-md hover:bg-gray-300 transition-transform transform hover:scale-105 w-full md:w-auto"

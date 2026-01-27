@@ -129,7 +129,7 @@ export default function Contact() {
           className="bg-teal-800 dark:bg-gray-800 p-8 rounded-lg shadow space-y-6"
         >
           <motion.div variants={item}>
-            <label className="block text-sm font-medium text-gray-900 dark:text-gray-200 mb-2">
+            <label className="block text-[18px] font-bold font-barlow tracking-widest text-gray-800 dark:text-gray-200 mb-2">
               Name
             </label>
             <input
@@ -139,12 +139,12 @@ export default function Contact() {
               onChange={(e) =>
                 setFormData({ ...formData, name: e.target.value })
               }
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full px-4 py-2 border font-bellefair rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
           </motion.div>
 
           <motion.div variants={item}>
-            <label className="block text-sm font-medium text-gray-900 dark:text-gray-200 mb-2">
+            <label className="block text-[18px] font-bold font-barlow tracking-widest text-gray-800 dark:text-gray-200 mb-2">
               Email
             </label>
             <input
@@ -154,12 +154,12 @@ export default function Contact() {
               onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full px-4 py-2 border rounded-lg font-bellefair  focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             />
           </motion.div>
 
           <motion.div variants={item}>
-            <label className="block text-sm font-medium text-gray-900 dark:text-gray-200 mb-2">
+            <label className="block text-[18px] font-bold font-barlow tracking-widest text-gray-800 dark:text-gray-200 mb-2">
               Message
             </label>
             <textarea
@@ -169,7 +169,7 @@ export default function Contact() {
               onChange={(e) =>
                 setFormData({ ...formData, message: e.target.value })
               }
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+              className="w-full px-4 py-2 border font-bellefair rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
             ></textarea>
           </motion.div>
 
@@ -177,7 +177,7 @@ export default function Contact() {
             type="submit"
             variants={item}
             whileHover={{ scale: 1.05 }}
-            className="w-full py-3 px-6 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-400 transition-colors"
+            className="w-full py-3 px-6 bg-teal-600 text-white text-[18px] font-barlow tracking-widest rounded-lg hover:bg-teal-500 focus:ring-2 focus:ring-teal-400 transition-colors"
           >
             Send Message
           </motion.button>

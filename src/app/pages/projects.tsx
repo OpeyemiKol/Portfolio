@@ -64,17 +64,17 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-12 px-6 ">
+    <section id="projects" className="min-h-screen py-20 px-5 ">
       {/* Section Title */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false }}
-        className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20"
+        className="relative text-4xl font-barlow tracking-widest font-bold text-center mb-8"
       >
         🚀 My Projects
-        <span className="absolute left-1/2 -translate-x-1/2 bottom-[-40] w-48 h-4 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
+        <span className="absolute left-1/2 -translate-x-1/2 bottom-[-20] w-20 h-2 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
       </motion.h1>
 
       {/* Subtitle */}
@@ -83,7 +83,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false }}
-        className="text-3xl text-teal-400 font-bellefair text-center mb-10 dark:text-gray-100"
+        className="text-[22px] text-teal-400 font-bellefair text-center mb-4 dark:text-gray-100"
       >
         A selection of projects showcasing my skills and creativity.
       </motion.h2>
@@ -94,7 +94,7 @@ export default function Projects() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false }}
-        className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto"
+        className="grid gap-10 grid-cols-1 lg:grid-cols-3 max-w-6xl mx-auto"
       >
         {projects.map((project) => (
           <motion.div
@@ -105,7 +105,7 @@ export default function Projects() {
             className="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-xl flex flex-col"
           >
             {/* Image */}
-            <div className="relative w-full h-48 group">
+            <div className="relative w-full h-40 group">
               <Image
                 src={project.image}
                 alt={project.name}
@@ -116,10 +116,10 @@ export default function Projects() {
 
             {/* Content */}
             <div className="p-4 flex-1 flex flex-col">
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+              <h3 className="text-[16px] font-semibold tracking-wide font-barlow text-gray-800 dark:text-gray-100">
                 {project.name}
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 flex-1">
+              <p className="text-sm text-gray-900 font-barlow dark:text-gray-300 mt-1 flex-1">
                 {project.description}
               </p>
               <motion.a
@@ -127,7 +127,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ color: "#0ea5e9" }}
-                className="mt-4 inline-block text-sm font-medium text-blue-600"
+                className="mt-2 inline-block text-sm font-medium text-blue-600"
               >
                 View Project
               </motion.a>

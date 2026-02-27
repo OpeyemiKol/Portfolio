@@ -46,20 +46,44 @@ export default function Skills() {
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
       },
     ],
+    hosting: [
+      {
+        name: "GitHub",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      },
+      {
+        name: "Vercel",
+        icon: "https://assets.vercel.com/image/upload/front/favicon/vercel/57x57.png",
+      },
+      {
+        name: "Netlify",
+        icon: "https://www.netlify.com/v3/img/components/logomark.png",
+      },
+    ],
+    databases: [
+      {
+        name: "Prisma",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+      },
+      {
+        name: "Supabase",
+        icon: "https://img.icons8.com/?size=100&id=grZaE9tjqDyr&format=png&color=000000",
+      },
+    ],
   };
 
   return (
-    <section id="skills" className="min-h-screen py-12 px-6">
+    <section id="skills" className="min-h-screen py-20 px-5 text-white">
       {/* Section Title */}
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false }}
-        className="relative text-6xl md:text-7xl font-barlow tracking-widest font-bold text-center mb-20"
+        className="relative text-4xl font-barlow tracking-widest font-bold text-center mb-6"
       >
         <HiCode className="inline" /> My Skills
-        <span className="absolute left-1/2 -translate-x-1/2 bottom-[-40] w-48 h-4 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
+        <span className="absolute left-1/2 -translate-x-1/2 bottom-[-10] w-20 h-2 bg-linear-to-r from-teal-400 via-blue-500 to-purple-500 animate-colorCycle rounded-md shadow-lg"></span>
       </motion.h1>
 
       <motion.h2
@@ -67,7 +91,7 @@ export default function Skills() {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: false }}
-        className="text-4xl font-bellefair text-teal-400 font-bold text-center mb-4 dark:text-gray-100"
+        className="text-3xl font-bellefair text-teal-400 font-bold text-center mb-2 dark:text-gray-100"
       >
         💻 Frontend Development
       </motion.h2>
@@ -77,7 +101,7 @@ export default function Skills() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
         viewport={{ once: false }}
-        className="text-center font-bellefair text-2xl max-w-2xl mx-auto mb-10 dark:text-gray-300"
+        className="text-center font-bellefair text-[20px] max-w-2xl mx-auto mb-2 dark:text-gray-300"
       >
         I specialize in building modern, responsive, and user-friendly web
         applications using contemporary frontend technologies.
@@ -88,6 +112,8 @@ export default function Skills() {
       <SkillCategory title="Frameworks & Libraries" items={skills.frameworks} />
       <SkillCategory title="Styling & UI" items={skills.styling} />
       <SkillCategory title="Modern Tooling" items={skills.tooling} />
+      <SkillCategory title="Hosting Platforms" items={skills.hosting} />
+      <SkillCategory title="Databases & ORM" items={skills.databases} />
     </section>
   );
 }
@@ -119,33 +145,33 @@ function SkillCategory({
       whileInView="show"
       viewport={{ once: false }}
       variants={container}
-      className="mb-16"
+      className="mb-2"
     >
       <motion.h3
         variants={item}
-        className="text-3xl font-bellefair font-semibold text-center mb-10 text-teal-400 dark:text-gray-200"
+        className="text-[22px] font-bellefair font-semibold text-center mb-2 text-teal-400 dark:text-gray-200"
       >
         {title}
       </motion.h3>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 max-w-5xl mx-auto">
+      <div className="grid grid-cols-3 gap-5 max-w-3xl mx-auto">
         {items.map((skill) => (
           <motion.div
             key={skill.name}
             variants={item}
-            className="group flex flex-col items-center justify-center py-8 rounded-2xl bg-gray-600 border-3 border-gray-800 hover:border-teal-400 transition"
+            className="group flex flex-col items-center justify-center py-2 hover:border-teal-400 transition"
           >
             {/* BIG ICON */}
             <motion.div
               whileHover={{ scale: 1.2, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="mb-6"
+              className="mb-3"
             >
               <Image
                 src={skill.icon}
                 alt={skill.name}
-                width={100}
-                height={100}
+                width={60}
+                height={60}
                 className="drop-shadow-xl"
               />
             </motion.div>
@@ -153,7 +179,7 @@ function SkillCategory({
             {/* NAME */}
             <motion.p
               variants={item}
-              className="text-lg font-semibold tracking-wide text-gray-200"
+              className="text-[16px] font-semibold tracking-wide text-gray-200"
             >
               {skill.name}
             </motion.p>

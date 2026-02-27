@@ -10,7 +10,7 @@ export default function Home() {
       id="home"
       className="flex flex-col items-center justify-center min-h-screen"
     >
-      <div className="w-8/10 mt-5 xl:mt-20 flex flex-col justify-center items-center gap-5 text-center">
+      <div className="w-8/10 mt-10 xl:mt-20 flex flex-col justify-center items-center gap-5 text-center">
         {/* Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
@@ -53,7 +53,7 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: false, amount: 0.3 }}
-          className="text-[24px] lg:text-[18px] font-barlow tracking-widest max-w-3xl"
+          className="text-[18px] font-barlow tracking-widest max-w-3xl"
         >
           I’m a <span className="font-bold">frontend engineer</span> focused on
           crafting intuitive digital experiences while continuously improving my
